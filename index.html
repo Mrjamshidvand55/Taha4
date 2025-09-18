@@ -1,18 +1,69 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>خوش آمدید به سایت Taha4</title>
+    <title>Mr jamshidvand</title>
     <style>
-        body { font-family: Tahoma, sans-serif; background: #f9f9f9; text-align: center; margin-top: 100px; }
-        h1 { color: #0077cc; }
-        p { color: #333; }
+        body {
+            background: #151515 url('https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=1500&q=80') no-repeat center center fixed;
+            background-size: cover;
+            color: #00FF41;
+            font-family: 'Fira Mono', 'Consolas', 'Monaco', monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .terminal {
+            background: rgba(0,0,0,0.85);
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 24px #00FF41aa;
+        }
+        h1 {
+            color: #00FF41;
+            margin-bottom: 18px;
+            font-size: 2.5rem;
+            text-shadow: 0 0 6px #00FF41cc;
+        }
+        form input, form button {
+            background: #111;
+            color: #00FF41;
+            border: 1px solid #00FF41;
+            border-radius: 4px;
+            padding: 10px;
+            margin: 6px;
+            font-size: 1rem;
+        }
+        form button {
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+        form button:hover {
+            background: #00FF41;
+            color: #151515;
+        }
     </style>
 </head>
 <body>
-    <h1>به سایت Taha4 خوش آمدید!</h1>
-    <p>این صفحه با استفاده از GitHub Pages ساخته شده است.</p>
-    <p>ساخته شده توسط Mrjamshidvand55</p>
+    <div class="terminal">
+        <h1>Mr jamshidvand</h1>
+        <form id="nameForm">
+            <input type="text" id="firstName" placeholder="First Name" required>
+            <input type="text" id="lastName" placeholder="Last Name" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('nameForm').onsubmit = function(e) {
+            e.preventDefault();
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            window.location.href = 'hacker.html?firstName=' + encodeURIComponent(firstName) + '&lastName=' + encodeURIComponent(lastName);
+        };
+    </script>
 </body>
 </html>
